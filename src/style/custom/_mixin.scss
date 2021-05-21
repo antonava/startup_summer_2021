@@ -1,0 +1,18 @@
+@mixin h4() {
+  font-family: $font-family-base;
+  font-size: $h4-font-size;
+}
+
+@mixin h5() {
+  font-family: $font-family-base;
+  font-size: $h5-font-size;
+  color: $black;
+}
+
+@mixin h6() {
+  font-family: $font-family-base;
+  font-size: $h6-font-size;
+  line-height: 1.063rem;
+  letter-spacing: 0.01em;
+  color: $black;
+}
