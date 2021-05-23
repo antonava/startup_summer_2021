@@ -1,17 +1,22 @@
 import { createActions } from 'redux-actions';
 
 export const {
-  setRepositories
+  setRepositories,
 } = createActions(
-  'SET_REPOSITORIES'
+  'SET_REPOSITORIES',
 );
 
 export const fetchRepositories = (payload) => async (dispatch) => {
   try {
     const res = await fetch(`https://api.github.com/users/${payload}/repos`);
     const repositories = await res.json();
-    dispatch(setRepositories(repositories));
-  } catch (err) {
-    console.log('Err', err.message);
+
+    if (res.status === 200) {
+      dispatch(setRepositories(repositories));
+    } else {
+      dispatch(setRepositories([]));
+    }
+  } catch (error) {
+    dispatch(setRepositories([]));
   }
-}
+};

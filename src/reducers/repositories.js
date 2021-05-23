@@ -6,7 +6,7 @@ import {
 
 const InitialState = {
   repositories: [],
-  isPending: true,
+  isPendingRepositories: true,
 }
 
 
@@ -15,7 +15,7 @@ export const repositories = handleActions(
     [setRepositories]: (state, { payload }) => ({
       ...state,
       repositories: payload,
-      isPending: false,
+      isPendingRepositories: false,
     }),
   },
   InitialState,

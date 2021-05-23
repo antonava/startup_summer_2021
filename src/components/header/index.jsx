@@ -1,31 +1,33 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { fetchUserInfo } from '../../actions/user';
 import { fetchRepositories } from '../../actions/repositories';
+import { SearchIcon } from '../icons/search';
+import { GitHubIcon } from '../icons/github_logo';
 
-import logo from '../../image/github_logo.svg';
-import search from '../../image/search.svg';
-
-const Header = ({ userName, setUserName}) => {
+const Header = ({ userName, setUserName }) => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setUserName(e.target.value)
+    setUserName(e.target.value);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      dispatch(fetchRepositories(userName));
       dispatch(fetchUserInfo(userName));
+      dispatch(fetchRepositories(userName));
     }
   };
 
-
   return (
     <nav className="nav">
-      <img src={logo} alt="github" className="nav_logo" />
+      <GitHubIcon />
       <form className="nav_search" onKeyPress={handleKeyPress}>
-        <img src={search} alt="search" className="nav_search__img" />
+        <div className="nav_search__img">
+          <SearchIcon />
+        </div>
         <input
           type="text"
           className="nav_search__input"
@@ -36,6 +38,6 @@ const Header = ({ userName, setUserName}) => {
       </form>
     </nav>
   );
-}
+};
 
 export default Header;
