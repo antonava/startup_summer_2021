@@ -1,8 +1,10 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import './style.css';
 import { Provider } from 'react-redux';
+// eslint-disable-next-line import/extensions
 import App from './App';
 import { store } from './store/store';
 

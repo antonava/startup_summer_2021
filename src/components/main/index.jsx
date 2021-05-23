@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';

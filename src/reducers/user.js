@@ -1,13 +1,13 @@
 import { handleActions } from 'redux-actions';
 
 import {
-  setUser
+  setUser,
 } from '../actions/user';
 
 const InitialState = {
   user: null,
   isPendingUser: true,
-}
+};
 
 export const user = handleActions(
   {

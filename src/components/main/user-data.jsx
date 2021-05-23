@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -15,7 +17,7 @@ const UserData = () => {
         </div>
         <div className="userInfo_name">{user.name}</div>
         <div className="userInfo_login">
-          <a href={`https://github.com/${user.login}`} target="_blank">{user.login}</a>
+          <a href={`https://github.com/${user.login}`} target="_blank" rel="noreferrer">{user.login}</a>
         </div>
         <span className="userInfo_followers">
           <FollowersIcon />

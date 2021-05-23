@@ -1,14 +1,13 @@
 import { handleActions } from 'redux-actions';
 
 import {
-  setRepositories
+  setRepositories,
 } from '../actions/repositories';
 
 const InitialState = {
   repositories: [],
   isPendingRepositories: true,
-}
-
+};
 
 export const repositories = handleActions(
   {
@@ -19,4 +18,4 @@ export const repositories = handleActions(
     }),
   },
   InitialState,
-)
+);

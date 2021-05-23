@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from '@material-ui/lab/Pagination';
 import ReactPaginate from 'react-paginate';
-
-import { useState } from 'react';
 
 const RepositoriesData = () => {
   const { user } = useSelector(state => state.user);
@@ -33,7 +31,7 @@ const RepositoriesData = () => {
         <div className="repo_info">
           {currentPageData.map((repository, index) => (
             <div key={index} className="repo_info-common">
-              <a href={`https://github.com/${user.login}/${repository.name}`} target="_blank">
+              <a href={`https://github.com/${user.login}/${repository.name}`} target="_blank" rel="noreferrer">
                 <h2 className="repo_info__title">{repository.name}</h2>
               </a>
               <p className="repo_info__description">{repository.description}</p>
