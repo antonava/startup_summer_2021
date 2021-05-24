@@ -8,7 +8,7 @@
 
 body {
   background-color: #e5e5e5;
-}
+} 
 
 /* Header */
 .nav {
@@ -54,6 +54,9 @@ body {
   width: 14px;
   height: 14px;
 }
+
+ */
+
 
 .initial-state,
 .userNotFound {
@@ -290,6 +293,9 @@ li.pagination__link--active {
   color: #fff;
 }
 
+
+
+
 @media (max-width: 610px) {
   .initial-state_title,
   .userNotFound_title {
@@ -302,6 +308,7 @@ li.pagination__link--active {
     width: 50px;
     height: 50px;
   }
+
 }
 
 @media (max-width: 1400px) {
@@ -365,6 +372,9 @@ li.pagination__link--active {
   .userInfo_name {
     font-size: 26px;
   }
+  .repoNotFound {
+
+  }
 }
 
 @media (max-width: 605px) {
@@ -398,6 +408,10 @@ li.pagination__link--active {
   }
   .repo_info__description {
     font-size: 14px;
+  }
+  .repoNotFound_title {
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 

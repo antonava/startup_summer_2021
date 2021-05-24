@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import React, { useState } from 'react';
 import Header from './components/header';
 import Main from './components/main';

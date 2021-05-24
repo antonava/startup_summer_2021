@@ -8,7 +8,7 @@ export const {
 
 export const fetchRepositories = (payload) => async (dispatch) => {
   try {
-    const res = await fetch(`https://api.github.com/users/${payload}/repos`);
+    const res = await fetch(`https://api.github.com/users/${payload}/repos?per_page=100`);
     const repositories = await res.json();
 
     if (res.status === 200) {

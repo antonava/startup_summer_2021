@@ -33,7 +33,7 @@ const RepositoriesData = () => {
             </div>
           ))}
           <div className="pagination-container">
-            {/* <p>{pagesVisited + 1} - {pagesVisited + repositoriesPerPage - 1} of {repositories.length} items</p> */}
+            <p>{pagesVisited + 1} - {pagesVisited + repositoriesPerPage} of {repositories.length} items</p>
             <ReactPaginate
               previousLabel={'<'}
               nextLabel={'>'}
