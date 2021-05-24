@@ -1,8 +1,6 @@
-/* eslint-disable import/extensions */
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { fetchUserInfo } from '../../actions/user';
 import { fetchRepositories } from '../../actions/repositories';
@@ -41,6 +39,11 @@ const Header = ({ userName, setUserName }) => {
       </form>
     </nav>
   );
+};
+
+Header.propTypes = {
+  userName: PropTypes.string.isRequired,
+  setUserName: PropTypes.func.isRequired,
 };
 
 export default Header;

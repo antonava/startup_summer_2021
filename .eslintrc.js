@@ -18,6 +18,13 @@ module.exports = {
   plugins: [
     'react',
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx'],
+      },
+    },
+  },
   rules: {
     'padding-line-between-statements': [
       'error',
@@ -29,14 +36,19 @@ module.exports = {
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
       { blankLine: 'always', prev: 'function', next: 'function' },
     ],
-    // 'no-console': 'error',
+    // 'import/extensions': [
+    //   'error',
+    //   'ignorePackages',
+    //   {
+    //     js: 'never',
+    //     jsx: 'never',
+    //   },
+    // ],
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'react/destructuring-assignment': 0,
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
-    // 'react-hooks/rules-of-hooks': 'error',
-    // 'react-hooks/exhaustive-deps': 'error',
     'no-underscore-dangle': 0,
     'lines-between-class-members': ['error', 'always'],
     'implicit-arrow-linebreak': 0,
@@ -44,7 +56,6 @@ module.exports = {
     'jsx-a11y/label-has-for': 0,
     'no-debugger': 1,
     'comma-dangle': ['error', 'always-multiline'],
-    // 'enforceDynamicLinks': 'never',
     'max-len': [
       'error',
       120,
@@ -55,7 +66,6 @@ module.exports = {
         ignoreRegExpLiterals: true,
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
-        // ignorePackages: true,
       },
     ],
     'no-mixed-operators': 0,
@@ -66,6 +76,7 @@ module.exports = {
         props: false,
       },
     ],
+    'import/extensions': 'off',
     'import/no-extraneous-dependencies': 0,
     'react/sort-comp': 0,
     'react/jsx-one-expression-per-line': 0,

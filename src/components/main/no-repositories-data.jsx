@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { RepoIcon } from '../icons/repo';
 
