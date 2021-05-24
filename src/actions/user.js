@@ -1,10 +1,8 @@
 import { createActions } from 'redux-actions';
 
 export const {
-  setUserName,
   setUser,
 } = createActions(
-  'SET_USERNAME',
   'SET_USER',
 );
 

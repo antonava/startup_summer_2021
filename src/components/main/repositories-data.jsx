@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-// import Pagination from '@material-ui/lab/Pagination';
 import ReactPaginate from 'react-paginate';
 
 const RepositoriesData = () => {
@@ -10,20 +7,16 @@ const RepositoriesData = () => {
   const { repositories } = useSelector(state => state.repositories);
 
   // ReactPaginate
-  const PER_PAGE = 4;
-  const pageCount = Math.ceil(repositories.length / PER_PAGE);
-  // // смещение
-  const [offset, setOffset] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
+  const repositoriesPerPage = 4;
+  const pageCount = Math.ceil(repositories.length / repositoriesPerPage);
+  const pagesVisited = pageNumber * repositoriesPerPage;
+  const displayRepositories = repositories.slice(pagesVisited, pagesVisited + repositoriesPerPage);
 
-  // // надо сохранить состояние
-  const currentPage = repositories.slice(offset - 1, offset - 1 + PER_PAGE);
-  const [data, setData] = useState(currentPage);
-
-  const handlePageClick = (e) => {
+  const changePage = (e) => {
     const selectedPage = e.selected;
 
-    setOffset(selectedPage + PER_PAGE);
-    setData(data);
+    setPageNumber(selectedPage);
   };
 
   return (
@@ -31,7 +24,7 @@ const RepositoriesData = () => {
       <div className="repo">
         <h2 className="repo_title">Repositories {repositories.length}</h2>
         <div className="repo_info">
-          {data.map((repository, index) => (
+          {displayRepositories.map((repository, index) => (
             <div key={index} className="repo_info-common">
               <a href={`https://github.com/${user.login}/${repository.name}`} target="_blank" rel="noreferrer">
                 <h2 className="repo_info__title">{repository.name}</h2>
@@ -39,16 +32,15 @@ const RepositoriesData = () => {
               <p className="repo_info__description">{repository.description}</p>
             </div>
           ))}
-          {/* <Pagination count={pageCount} color="primary" shape="rounded"/> */}
           <div className="pagination-container">
-            <p>{offset} - {offset + data.length - 1} of {repositories.length} items</p>
+            {/* <p>{pagesVisited + 1} - {pagesVisited + repositoriesPerPage - 1} of {repositories.length} items</p> */}
             <ReactPaginate
               previousLabel={'<'}
               nextLabel={'>'}
-              pageRangeDisplayed={PER_PAGE}
+              pageRangeDisplayed={repositoriesPerPage}
               marginPagesDisplayed={1}
               pageCount={pageCount}
-              onPageChange={handlePageClick}
+              onPageChange={changePage}
               containerClassName="pagination"
               previousLinkClassName="pagination__link"
               nextLinkClassName="pagination__link"
