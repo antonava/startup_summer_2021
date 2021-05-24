@@ -21,11 +21,11 @@ const UserData = () => {
         </div>
         <span className="userInfo_followers">
           <FollowersIcon />
-          {user.followers} followers
+          {(user.followers > 1e4) ? `${(user.followers / 1000).toFixed(1)}k followers` : `${user.followers} followers`}
         </span>
         <span className="userInfo_following">
           <FollowingIcon />
-          {user.following} following
+          {(user.following > 1e4) ? `${(user.following / 1000).toFixed(1)}k following` : `${user.following} following`}
         </span>
       </div>
     </div>

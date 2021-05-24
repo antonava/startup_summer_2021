@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 // import Pagination from '@material-ui/lab/Pagination';
@@ -14,14 +16,14 @@ const RepositoriesData = () => {
   const [offset, setOffset] = useState(1);
 
   // // надо сохранить состояние
-  const currentPageData = repositories.slice(offset - 1, offset - 1 + PER_PAGE);
-  // console.log(currentPageData);
-  // console.log('Pagination', currentPageData);
-  // console.log("pageCount", pageCount)
+  const currentPage = repositories.slice(offset - 1, offset - 1 + PER_PAGE);
+  const [data, setData] = useState(currentPage);
+
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
 
     setOffset(selectedPage + PER_PAGE);
+    setData(data);
   };
 
   return (
@@ -29,21 +31,22 @@ const RepositoriesData = () => {
       <div className="repo">
         <h2 className="repo_title">Repositories {repositories.length}</h2>
         <div className="repo_info">
-          {currentPageData.map((repository, index) => (
+          {data.map((repository, index) => (
             <div key={index} className="repo_info-common">
               <a href={`https://github.com/${user.login}/${repository.name}`} target="_blank" rel="noreferrer">
                 <h2 className="repo_info__title">{repository.name}</h2>
               </a>
               <p className="repo_info__description">{repository.description}</p>
-              {/* {console.log("Repo name",repository.name)} */}
             </div>
           ))}
           {/* <Pagination count={pageCount} color="primary" shape="rounded"/> */}
           <div className="pagination-container">
-            <p>{offset} - {offset + currentPageData.length - 1} of {repositories.length} items</p>
+            <p>{offset} - {offset + data.length - 1} of {repositories.length} items</p>
             <ReactPaginate
               previousLabel={'<'}
               nextLabel={'>'}
+              pageRangeDisplayed={PER_PAGE}
+              marginPagesDisplayed={1}
               pageCount={pageCount}
               onPageChange={handlePageClick}
               containerClassName="pagination"

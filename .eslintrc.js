@@ -29,7 +29,7 @@ module.exports = {
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
       { blankLine: 'always', prev: 'function', next: 'function' },
     ],
-    'no-console': 'error',
+    // 'no-console': 'error',
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'react/destructuring-assignment': 0,
