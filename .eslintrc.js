@@ -8,16 +8,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
+  parser: 'babel-eslint',
   plugins: [
     'react',
+    'react-hooks',
   ],
+  globals: {
+    document: true,
+    window: true,
+    fetch: true,
+  },
   settings: {
     'import/resolver': {
       node: {
@@ -36,19 +36,13 @@ module.exports = {
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
       { blankLine: 'always', prev: 'function', next: 'function' },
     ],
-    // 'import/extensions': [
-    //   'error',
-    //   'ignorePackages',
-    //   {
-    //     js: 'never',
-    //     jsx: 'never',
-    //   },
-    // ],
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'react/destructuring-assignment': 0,
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'no-underscore-dangle': 0,
     'lines-between-class-members': ['error', 'always'],
     'implicit-arrow-linebreak': 0,

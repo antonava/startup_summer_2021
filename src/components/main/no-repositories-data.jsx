@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { RepoIcon } from '../icons/repo';
 
 const NoRepositoriesData = () => (
-    <div className="repoNotFound">
+    <div className="repo-not-found">
       <RepoIcon />
-      <p className="repoNotFound_title">Repository list is empty</p>
+      <p className="repo-not-found_title">Repository list is empty</p>
     </div>
 );
 

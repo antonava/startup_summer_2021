@@ -59,13 +59,13 @@ body {
 
 
 .initial-state,
-.userNotFound {
+.user-not-found {
   height: 100%;
   width: 100%;
 }
 
 .initial-state_title,
-.userNotFound_title {
+.user-not-found_title {
   width: 215px;
   height: 62px;
   margin-top: 65px;
@@ -83,7 +83,7 @@ body {
   color: #808080;
 }
 
-.repoNotFound_title {
+.repo-not-found_title {
   height: 30px;
   margin-top: 45px;
 
@@ -108,8 +108,8 @@ body {
 }
 
 .initial-state_img,
-.userNotFound_img,
-.repoNotFound_img {
+.user-not-found_img,
+.repo-not-found_img {
   width: 65px;
   height: 65px;
 
@@ -119,18 +119,18 @@ body {
   transform: translate(-50%, -45%);
 }
 
-.userInfo-container {
+.user-info-container {
   width: 30%;
   padding-top: 40px;
   /* background-color: aquamarine; */
 }
 
-.userInfo {
+.user-info {
   /* width: 100%; */
   margin-left: 61px;
 }
 
-.userInfo_photo {
+.user-info_photo {
   width: 280px;
   height: 280px;
   overflow: hidden;
@@ -143,7 +143,7 @@ body {
   margin: 0 auto;
 }
 
-.userInfo_name {
+.user-info_name {
   padding-top: 35px;
 
   font-family: "Inter", sans-serif;
@@ -154,7 +154,7 @@ body {
   color: #000;
 }
 
-.userInfo_login {
+.user-info_login {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 22px;
@@ -164,19 +164,19 @@ body {
   color: #0064eb;
 }
 
-.userInfo_followers,
-.userInfo_following {
+.user-info_followers,
+.user-info_following {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 24px;
 }
 
-.userInfo_followers {
+.user-info_followers {
   margin-right: 20px;
 }
 
-.userInfo_followers-icon,
-.userInfo_following-icon {
+.user-info_followers-icon,
+.user-info_following-icon {
   margin-right: 8px;
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .repo,
-.repoNotFound {
+.repo-not-found {
   width: 70%;
   padding-top: 40px;
   position: relative;
@@ -298,13 +298,13 @@ li.pagination__link--active {
 
 @media (max-width: 610px) {
   .initial-state_title,
-  .userNotFound_title {
+  .user-not-found_title {
     font-size: 20px;
     line-height: 25px;
   }
 
   .initial-state_img,
-  .userNotFound_img {
+  .user-not-found_img {
     width: 50px;
     height: 50px;
   }
@@ -327,11 +327,11 @@ li.pagination__link--active {
 }
 
 @media (max-width: 1100px) {
-  .userInfo_photo {
+  .user-info_photo {
     width: 200px;
     height: 200px;
   }
-  .userInfo_name {
+  .user-info_name {
     font-size: 24px;
   }
   .repo_title {
@@ -340,8 +340,8 @@ li.pagination__link--active {
   .repo_info__title {
     font-size: 24px;
   }
-  .userInfo_followers,
-  .userInfo_following {
+  .user-info_followers,
+  .user-info_following {
     display: block;
     font-size: 14px;
   }
@@ -354,35 +354,32 @@ li.pagination__link--active {
 }
 
 @media (max-width: 860px) {
-  .userInfo-container {
+  .user-info-container {
     width: 100%;
   }
   .user-table {
     display: block;
   }
-  .userInfo_followers,
-  .userInfo_following {
+  .user-info_followers,
+  .user-info_following {
     display: inline;
     font-size: 16px;
   }
-  .userInfo_photo {
+  .user-info_photo {
     width: 250px;
     height: 250px;
   }
-  .userInfo_name {
+  .user-info_name {
     font-size: 26px;
-  }
-  .repoNotFound {
-
   }
 }
 
 @media (max-width: 605px) {
-  .userInfo_photo {
+  .user-info_photo {
     width: 200px;
     height: 200px;
   }
-  .userInfo_name {
+  .user-info_name {
     font-size: 24px;
   }
   .repo_title {
@@ -409,7 +406,7 @@ li.pagination__link--active {
   .repo_info__description {
     font-size: 14px;
   }
-  .repoNotFound_title {
+  .repo-not-found_title {
     font-size: 20px;
     line-height: 25px;
   }

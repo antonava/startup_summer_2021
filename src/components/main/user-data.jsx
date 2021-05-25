@@ -8,20 +8,20 @@ const UserData = () => {
   const { user } = useSelector(state => state.user);
 
   return (
-    <div className="userInfo-container">
-      <div className="userInfo">
-        <div className="userInfo_photo">
+    <div className="user-info-container">
+      <div className="user-info">
+        <div className="user-info_photo">
           <img src={user.avatar_url} alt={user.name} className="user_photo" />
         </div>
-        <div className="userInfo_name">{user.name}</div>
-        <div className="userInfo_login">
+        <div className="user-info_name">{user.name}</div>
+        <div className="user-info_login">
           <a href={`https://github.com/${user.login}`} target="_blank" rel="noreferrer">{user.login}</a>
         </div>
-        <span className="userInfo_followers">
+        <span className="user-info_followers">
           <FollowersIcon />
           {(user.followers > 1e4) ? `${(user.followers / 1000).toFixed(1)}k followers` : `${user.followers} followers`}
         </span>
-        <span className="userInfo_following">
+        <span className="user-info_following">
           <FollowingIcon />
           {(user.following > 1e4) ? `${(user.following / 1000).toFixed(1)}k following` : `${user.following} following`}
         </span>
