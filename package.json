@@ -2,7 +2,7 @@
   "name": "startup_summer_2021",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://startup-summer-2021-pi.vercel.app/",
+  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
